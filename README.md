@@ -5,101 +5,111 @@
 ## 1. Overview | Огляд
 
 EN:
-A Google Apps Script tool for hierarchical sorting of BIM QA/QC tables.
+Google Apps Script tool for **hierarchical sorting of BIM QA/QC tables** with full formatting preservation.
 
 UA:
-Інструмент Google Apps Script для багаторівневого сортування BIM QA/QC таблиць.
+Інструмент Google Apps Script для **ієрархічного сортування BIM QA/QC таблиць зі збереженням форматування**.
 
 ---
 
-## 2. UI Version | Версія інтерфейсу
+## 2. Core Idea | Основна ідея
 
 EN:
-This version includes a lightweight Bootstrap-based web interface.
+The tool does NOT just sort rows — it builds hierarchy first, then sorts inside it.
 
 UA:
-Ця версія містить легкий Bootstrap інтерфейс.
+Інструмент не просто сортує рядки — він спочатку будує ієрархію, потім сортує всередині неї.
 
 ---
 
-## 3. Sorting Logic | Логіка
+## 3. Sorting Logic | Логіка сортування
 
 EN:
-Sorting priority:
+Two-stage sorting model:
+
+1. ROOT grouping (first token of column B)
+2. Hierarchical sort inside group
+
+UA:
+Двохетапна модель:
+
+1. Групування по ROOT (перший елемент колонки B)
+2. Ієрархічне сортування всередині групи
+
+---
+
+## 4. Sort Order | Порядок
+
+EN:
 B → C → D → E → L → M
 
 UA:
-Пріоритет сортування:
 B → C → D → E → L → M
 
 ---
 
-## 4. What it does | Що робить
+## 5. What it does | Функціонал
 
 EN:
-- Sorts BIM tables hierarchically  
-- Preserves formatting  
-- Supports optional file/page grouping  
+- Hierarchical BIM sorting (Revit-like logic)
+- Preserves formatting (colors, fonts, styles)
+- Handles numeric + text comparison
+- Stable grouping by ROOT identifier
+- Works directly in Google Sheets
 
 UA:
-- Сортує BIM таблиці по ієрархії  
-- Зберігає форматування  
-- Підтримує групування по файлу і сторінці  
+- Ієрархічне BIM сортування (логіка як у Revit)
+- Збереження форматування (кольори, стилі, шрифти)
+- Обробка чисел і тексту
+- Стабільне групування по ROOT
+- Робота прямо в Google Sheets
 
 ---
 
-## 5. Installation (Google Apps Script) | Встановлення
+## 6. Installation | Встановлення
 
 EN:
 1. Open Google Sheets  
-2. Go to Extensions → Apps Script  
-3. Create new project  
-4. Paste `sortHierarchical.js`  
-5. Save project  
-6. Run function `sortHierarchical()`  
+2. Extensions → Apps Script  
+3. Paste `sortHierarchical.js`  
+4. Save project  
+5. Run `sortHierarchical()`  
 
 UA:
 1. Відкрити Google Sheets  
 2. Extensions → Apps Script  
-3. Створити новий проект  
-4. Вставити `sortHierarchical.js`  
-5. Зберегти  
-6. Запустити `sortHierarchical()`  
+3. Вставити `sortHierarchical.js`  
+4. Зберегти  
+5. Запустити `sortHierarchical()`  
 
 ---
 
-## 6. Optional Web Deploy | Опціональний веб-деплой
+## 7. Optional UI Version | Опціональний UI
 
 EN:
-You can deploy this script as a Web App for UI access:
-- Apps Script → Deploy → New deployment  
-- Select “Web App”  
-- Set access to “Anyone in workspace” or “Anyone with link”
+Can be deployed as a lightweight web interface using Apps Script Web App.
 
 UA:
-Можна задеплоїти як Web App:
-- Deploy → New deployment  
-- Web App  
-- Доступ: workspace або по лінку  
+Можна використовувати як Web App з простим UI інтерфейсом.
 
 ---
 
-## 7. Usage | Використання
+## 8. Key Insight | Ключова ідея
 
 EN:
-Run directly from Apps Script or UI button.
+Sorting = Group first → Sort inside groups
 
 UA:
-Запуск через Apps Script або UI кнопку.
+Сортування = Спочатку групування → Потім сортування всередині
 
 ---
 
-## 8. Notes | Примітки
+## 9. Notes | Примітки
 
 EN:
-Designed for BES: QA/QC workflows in BIM/VDC environments.
+Built for BIM QA/QC workflows in engineering production environments.
 
 UA:
-Розроблено для BES: QA/QC BIM/VDC процесів.
+Розроблено для BIM QA/QC процесів у інженерному середовищі.
 
 (vadym.c@b-eng-s.com)[https://vadim4web.github.io/]
