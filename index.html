@@ -95,12 +95,15 @@
 <script>
 let editor;
 
-require.config({ paths: { vs: "https://unpkg.com/monaco-editor@0.45.0/min/vs" }});
+require.config({ paths: { vs: "https://unpkg.com/monaco-editor@0.45.0/min/vs" } });
 
-require(["vs/editor/editor.main"], function () {
+require(["vs/editor/editor.main"], async function () {
+
+  const response = await fetch("./sortHierarchical.js");
+  const scriptText = await response.text();
 
   editor = monaco.editor.create(document.getElementById("editor"), {
-    value: `// BIM QAQC Hierarchical Sort Engine v2\nfunction sortHierarchical() {\n  Logger.log("RUNNING SORT");\n}`,
+    value: scriptText,
     language: "javascript",
     theme: "vs-light"
   });

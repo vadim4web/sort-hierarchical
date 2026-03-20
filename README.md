@@ -1,4 +1,4 @@
-# BIM QA/QC – Hierarchical Sort Engine v2.0
+# BIM QA/QC – Hierarchical Sort Engine v1.5
 
 ---
 
@@ -97,7 +97,9 @@ UA:
 ## 8. Notes | Примітки
 
 EN:
-Designed for QA/QC workflows in BIM/VDC environments.
+Designed for BES: QA/QC workflows in BIM/VDC environments.
 
 UA:
-Розроблено для QA/QC BIM/VDC процесів.
+Розроблено для BES: QA/QC BIM/VDC процесів.
+
+(vadym.c@b-eng-s.com)[https://vadim4web.github.io/]
