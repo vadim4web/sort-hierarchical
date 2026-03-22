@@ -1,0 +1,23 @@
+{
+  "name": "sort-hierarchical",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "sortHierarchical.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch sortHierarchical.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadim4web/sort-hierarchical.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vadim4web/sort-hierarchical/issues"
+  },
+  "homepage": "https://github.com/vadim4web/sort-hierarchical#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
