@@ -9,15 +9,21 @@ function sortHierarchical(
 ) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet(); // get sheet / отримати лист
   const startRow = 2; // skip header / пропустити заголовок
-  const lastRow = sheet.getLastRow(); // find last row / остання стрічка
-  const lastCol = sheet.getLastColumn(); // find last column / остання колонка
+
+  // AUTO DETECT (may hang on bad data) / Автовизначення (може зависати на "битих" даних)
+  const lastRow = sheet.getLastRow(); // detect rows / визначити рядки
+  const lastCol = sheet.getLastColumn(); // detect cols / визначити колонки
+
+  // SAFE MODE (manual override) / Безпечний режим (ручне керування при зависанні)
+  // const lastRow = 1000; / hardcode rows / захардкодити рядки
+  // const lastCol = 20; / hardcode cols / захардкодити колонки
 
   if (lastRow < startRow) return; // empty check / перевірка на порожнечу
 
   const range = sheet.getRange(startRow, 1, lastRow - 1, lastCol); // target range / цільовий діапазон
 
   // GET VALUES + FORMATTING / Отримати дані + форматування
-  const values = range.getValues(); // cell content / значення комірок
+  const values = range.getValues(); // cell values / значення
   const backgrounds = range.getBackgrounds(); // bg color / колір фону
   const fontColors = range.getFontColors(); // text color / колір тексту
   const fontWeights = range.getFontWeights(); // bold / жирність
