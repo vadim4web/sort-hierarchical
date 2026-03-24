@@ -95,5 +95,5 @@ function sortHierarchical(
   range.setFontStyles(rows.map(r => r.style.fs)); // write styles / запис курсиву
   range.setFontSizes(rows.map(r => r.style.fz)); // write sizes / запис розмірів
 
-  Logger.log(`SORT DONE | ROOT: ${paramLetters[0]} | MODE: ${ascending ? "ASC" : "DESC "}`); // log log / логування результату
+  Logger.log(`SORT DONE | ROOT: ${paramLetters[0]} | ORDER: ${paramLetters.join(" → ")} | NUMERIC: ${ascending ? "ASC" : "DESC"} | ROWS: ${values.length}`); // log log / логування результату
 }
