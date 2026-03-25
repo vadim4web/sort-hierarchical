@@ -4,7 +4,7 @@
  * @param {boolean} ascending - Sort direction / Напрямок сортування
  */
 function sortHierarchical(
-  paramLetters = ["B", "C", "D", "E", "F", "H", "L", "M"],
+  paramLetters = ["B", "C", "D", "E"],
   ascending = false,
 ) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet(); // get sheet / отримати лист
